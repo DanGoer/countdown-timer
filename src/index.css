@@ -1,13 +1,54 @@
+/* General style */
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: "Red Hat Text", sans-serif;
+  background-image: url(./assets/bg-stars.svg);
+  background-color: hsl(234, 17%, 12%);
+  color: hsl(0, 0%, 100%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/* General style end */
+
+/* Headline */
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
 }
+
+/* Headline end */
+
+/* Main */
+
+main {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Main end */
+
+/* Footer */
+
+footer {
+  background-image: url(./assets/pattern-hills.svg);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+footer img {
+  margin: 0 30px 0 0;
+  height: 20px;
+}
+
+footer img:hover {
+  filter: invert(53%) sepia(39%) saturate(3026%) hue-rotate(312deg)
+    brightness(103%) contrast(97%);
+}
+
+/* Footer end */
