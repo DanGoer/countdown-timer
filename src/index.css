@@ -6,10 +6,9 @@ body {
   background-color: hsl(234, 17%, 12%);
   color: hsl(0, 0%, 100%);
   font-weight: 700;
-  height: 100vh;
+  height: 94vh;
   position: relative;
   margin: 0;
-  max-width: 1440px;
 }
 
 /* General style end */
@@ -47,21 +46,54 @@ main {
   align-items: center;
 }
 
+/* Time cards*/
+
+.card-time {
+  height: 100px;
+  width: 100px;
+  position: relative;
+  box-shadow: 0 6px 0px 0px hsla(0, 0%, 0%, 0.4);
+  border-radius: 6px;
+}
+
+.card-bottom {
+  height: 50%;
+  background-color: hsl(236, 21%, 26%);
+  border-radius: 6px;
+}
+
+.card-top {
+  height: 50%;
+  background-color: hsl(235, 16%, 14%);
+  border-radius: 6px;
+  border-top: 2px;
+}
+
+.counter {
+  position: absolute;
+  left: 25%;
+  top: 8%;
+  font-size: 60px;
+  color: hsl(345, 95%, 68%);
+  opacity: 90%;
+}
+
+/* Time cards end*/
+
 /* Main end */
 
 /* Footer */
 
 footer {
-  background-image: url(./assets/pattern-hills.svg);
+  background: url(./assets/pattern-hills.svg) center;
   height: 180px;
-
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   position: absolute;
   bottom: 0;
-  width: 1440px;
+  width: 100%;
   background-size: cover;
 }
 
