@@ -56,13 +56,48 @@ main {
   border-radius: 6px;
 }
 
+.card-top::before,
+.card-top::after {
+  content: "";
+  position: absolute;
+  right: -0.5rem;
+  bottom: -0.5rem;
+  background-color: hsl(234, 17%, 12%);
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1rem;
+}
+.card-top::after {
+  left: -0.5rem;
+}
+
+.card-time:before,
+.card-time:after {
+  content: "";
+  position: absolute;
+  height: 6px;
+  width: 2px;
+  top: 46px;
+  left: 0px;
+  background-color: hsl(234, 17%, 12%);
+  border: 1px solid hsl(234, 17%, 12%);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.card-time:after {
+  right: 0px;
+}
+
 .card-bottom {
+  position: relative;
   height: 50%;
   background-color: hsl(236, 21%, 26%);
   border-radius: 6px;
 }
 
 .card-top {
+  position: relative;
   height: 50%;
   background-color: hsl(235, 16%, 14%);
   border-radius: 6px;

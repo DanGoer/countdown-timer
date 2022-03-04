@@ -1,42 +1,37 @@
 import React, { useEffect, useState } from "react";
 import "../../index.css";
+import Counter from "./Counter";
 
 function Timer() {
-  const [seconds, setSeconds] = useState(0);
-  const [minutes, setMinutes] = useState(0);
-  const [hours, setHours] = useState(0);
-  const [days, setDays] = useState(0);
-
   const calculateTimeLeft = () => {
     let year = new Date().getFullYear();
     const difference = +new Date(`${year}-3-15`) - +new Date();
 
     if (difference > 0) {
-      setSeconds(Math.floor((difference / 1000) % 60));
-      setMinutes(Math.floor((difference / 1000 / 60) % 60));
-      setHours(Math.floor((difference / (1000 * 60 * 60)) % 24));
-      setDays(Math.floor(difference / (1000 * 60 * 60 * 24)));
+      return {
+        seconds: Math.floor((difference / 1000) % 60),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+      };
     }
   };
 
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
   useEffect(() => {
     const timer = setTimeout(() => {
-      calculateTimeLeft();
+      setTimeLeft(calculateTimeLeft());
     }, 1000);
     return () => clearTimeout(timer);
   });
 
   return (
     <main>
-      <div className="card-time">
-        <div className="card-top"></div>
-        <div className="card-bottom"></div>
-        <div className="counter">{days}</div>
-      </div>
-      <p>DAYS</p>
-      <div>{hours}HOURS</div>
-      <div>{minutes}MINUTES</div>
-      <div>{seconds}SECONDS</div>
+      <Counter time="Days" timeLeft={timeLeft.days} />
+      <Counter time="Hours" timeLeft={timeLeft.hours} />
+      <Counter time="Minutes" timeLeft={timeLeft.minutes} />
+      <Counter time="Seconds" timeLeft={timeLeft.seconds} />
     </main>
   );
 }
